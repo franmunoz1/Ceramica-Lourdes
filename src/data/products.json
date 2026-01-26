@@ -1,0 +1,34 @@
+[
+  {
+    "id": "p1",
+    "slug": "taza-artesanal",
+    "name": "Taza artesanal",
+    "price": 8500,
+    "image": "/products/taza.jpg",
+    "description": "Taza hecha a mano, esmaltada, ideal para café o té."
+  },
+  {
+    "id": "p2",
+    "slug": "plato-decorativo",
+    "name": "Plato decorativo",
+    "price": 12000,
+    "image": "/products/plato.jpg",
+    "description": "Plato decorativo artesanal. Pieza única con terminación premium."
+  },
+  {
+    "id": "p3",
+    "slug": "jarron-ceramica",
+    "name": "Jarrón de cerámica",
+    "price": 25000,
+    "image": "/products/jarron.jpg",
+    "description": "Jarrón de cerámica hecho a mano, perfecto para flores frescas o secas."
+  },
+  {
+    "id": "p4",
+    "slug": "maceta-pequena",
+    "name": "Maceta pequeña",
+    "price": 6000,
+    "image": "/products/maceta.jpg",
+    "description": "Maceta artesanal ideal para suculentas o cactus."
+  }
+]

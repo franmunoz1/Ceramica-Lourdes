@@ -1,0 +1,63 @@
+# =========================
+# Node / npm
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+
+# =========================
+# Astro
+# =========================
+.astro/
+dist/
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# JetBrains
+.idea/
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# Build caches
+# =========================
+.cache/
+.parcel-cache/
+.turbo/
+.vercel/
+
+# =========================
+# Netlify (local dev)
+# =========================
+.netlify/
+
+# =========================
+# CMS uploads (OPCIONAL)
+# =========================
+# Si NO querés versionar imágenes subidas por el cliente:
+# public/uploads/
+
+# Si SÍ querés versionarlas (RECOMENDADO para backup):
+# NO ignores public/uploads

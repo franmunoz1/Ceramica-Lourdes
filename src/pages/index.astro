@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProductCard from "../components/ProductCard.astro";
+import { getAllProducts } from "../lib/products.js";
+
+const products = await getAllProducts();
+---
+
+<BaseLayout title="Catálogo">
+  <h2 class="mb-6 text-xl font-semibold">Catálogo de productos</h2>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+    {products.map((product) => (
+      <ProductCard product={product} />
+    ))}
+  </div>
+</BaseLayout>
