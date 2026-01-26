@@ -17,13 +17,20 @@ if (!product) {
 }
 
 const waMessage = `Hola! Estoy viendo el catálogo y quisiera consultar por: ${product.name} 😊`;
+
+const imageSrc = (product?.image ?? "")
+  .replace(/^\/?public\//, "/")
+  .replace(/^uploads\//, "/uploads/");
+
+const finalSrc = imageSrc && !imageSrc.startsWith("/") ? `/${imageSrc}` : imageSrc;
+
 ---
 
 <BaseLayout title={product.name}>
   <div class="grid gap-6 md:grid-cols-2">
     <div class="rounded-2xl border bg-white overflow-hidden">
       <div class="aspect-square bg-slate-100">
-        <img src={product.image} alt={product.name} class="h-full w-full object-cover" />
+        <img src={finalSrc} alt={product.name} class="h-full w-full object-cover" />
       </div>
     </div>
 

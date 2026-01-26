@@ -1,16 +1,26 @@
 ---
+
 const { product } = Astro.props;
+
+const imageSrc = (product?.image ?? "")
+  .replace(/^\/?public\//, "/")     // "public/uploads/..." -> "/uploads/..."
+  .replace(/^uploads\//, "/uploads/"); // "uploads/..." -> "/uploads/..."
+
+const finalSrc = imageSrc && !imageSrc.startsWith("/") ? `/${imageSrc}` : imageSrc;
+
+
 
 ---
 
 <div class="rounded-xl border bg-white overflow-hidden hover:shadow-md transition">
   <div class="aspect-square bg-slate-100">
     <img
-      src={product.image}
-      alt={product.name}
-      class="h-full w-full object-cover"
-      loading="lazy"
+        src={finalSrc}
+        alt={product.name}
+        class="h-full w-full object-cover"
+        loading="lazy"
     />
+
   </div>
 
   <div class="p-3">
