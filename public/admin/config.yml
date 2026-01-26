@@ -2,21 +2,5 @@ backend:
   name: github
   repo: franmunoz1/Ceramica-Lourdes
   branch: main
-
-media_folder: "public/uploads"
-public_folder: "/uploads"
-
-collections:
-  - name: "products"
-    label: "Productos"
-    folder: "src/content/products"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Nombre", name: "name", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string", hint: "Ej: taza-artesanal" }
-      - { label: "Precio", name: "price", widget: "number", value_type: "int", min: 0 }
-      - { label: "Imagen", name: "image", widget: "image" }
-      - { label: "Descripción", name: "description", widget: "text" }
-      - { label: "Orden", name: "order", widget: "number", value_type: "int", default: 0, required: false }
-      - { label: "Activo", name: "active", widget: "boolean", default: true, required: false }
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
