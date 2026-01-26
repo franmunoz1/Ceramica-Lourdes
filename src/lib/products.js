@@ -1,3 +1,21 @@
+export function normalizeImagePath(image) {
+  if (!image) return "";
+
+  // URL completa: no tocar
+  if (image.startsWith("http://") || image.startsWith("https://")) return image;
+
+  // Si guardaron "public/uploads/..."
+  if (image.startsWith("public/")) image = image.replace(/^public\//, "");
+
+  // Quitar "./" si viniera
+  if (image.startsWith("./")) image = image.slice(2);
+
+  // Asegurar barra inicial
+  if (!image.startsWith("/")) image = `/${image}`;
+
+  return image;
+}
+
 export async function getAllProducts() {
   const modules = import.meta.glob("../content/products/*.md", { eager: true });
 
@@ -7,7 +25,7 @@ export async function getAllProducts() {
       name: data.name ?? "",
       slug: data.slug ?? "",
       price: Number(data.price ?? 0),
-      image: data.image ?? "",
+      image: normalizeImagePath(data.image ?? ""),   // 👈 CLAVE
       description: data.description ?? "",
       order: Number(data.order ?? 0),
       active: data.active !== false,
