@@ -1,17 +1,24 @@
+backend:
+  name: github
+  repo: franmunoz1/Ceramica-Lourdes
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
 collections:
   - name: "products"
     label: "Productos"
     folder: "src/content/products"
     create: true
-
     extension: "md"
     format: "frontmatter"
-    identifier_field: "name"
-
     slug: "{{slug}}"
     fields:
       - { label: "Nombre", name: "name", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string", hint: "Ej: argentina-picada" }
+      - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Precio", name: "price", widget: "number", value_type: "int", min: 0 }
       - { label: "Imagen", name: "image", widget: "image" }
       - { label: "Descripción", name: "description", widget: "text" }
