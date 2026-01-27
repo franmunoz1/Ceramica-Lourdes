@@ -8,5 +8,5 @@ description: |-
   Diámetro:
   Capacidad:
 order: 0
-active: true
+active: false
 ---
