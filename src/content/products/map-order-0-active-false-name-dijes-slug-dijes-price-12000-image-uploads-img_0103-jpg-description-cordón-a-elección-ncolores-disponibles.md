@@ -10,5 +10,5 @@ description: |-
   Cordón a elección.
   Colores disponibles: 
 order: 0
-active: false
+active: true
 ---
