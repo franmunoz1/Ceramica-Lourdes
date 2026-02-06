@@ -25,7 +25,8 @@ export async function getAllProducts() {
       name: data.name ?? "",
       slug: data.slug ?? "",
       price: Number(data.price ?? 0),
-      image: normalizeImagePath(data.image ?? ""),   // 👈 CLAVE
+      image: normalizeImagePath(data.image ?? ""),
+      images: Array.isArray(data.images) ? data.images.map(normalizeImagePath) : [],
       description: data.description ?? "",
       order: Number(data.order ?? 0),
       active: data.active !== false,
