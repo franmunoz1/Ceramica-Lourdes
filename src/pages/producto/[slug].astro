@@ -18,19 +18,97 @@ if (!product) {
 
 const waMessage = `Hola! Estoy viendo el catálogo y quisiera consultar por: ${product.name} 😊`;
 
-const imageSrc = (product?.image ?? "")
-  .replace(/^\/?public\//, "/")
-  .replace(/^uploads\//, "/uploads/");
+// Función para normalizar rutas de imágenes
+const normalizeImagePath = (path: string): string => {
+  if (!path) return "";
+  return path
+    .replace(/^\/?public\//, "/")
+    .replace(/^uploads\//, "/uploads/")
+    .replace(/^(?!\/)/, "/");
+};
 
-const finalSrc = imageSrc && !imageSrc.startsWith("/") ? `/${imageSrc}` : imageSrc;
+// Construir array de imágenes
+let allImages: string[] = [];
 
+// Acceder a images de forma segura
+const productImages = (product as any).images;
+
+// Si hay galería de imágenes, usarla
+if (productImages && Array.isArray(productImages) && productImages.length > 0) {
+  // En Netlify CMS, cada elemento puede ser un objeto {image: "path"} o un string
+  allImages = productImages.map((item: any) => {
+    const imagePath = typeof item === 'string' ? item : (item.image || item);
+    return normalizeImagePath(imagePath);
+  }).filter((img): img is string => Boolean(img)); // Type guard para filtrar
+} 
+
+// Si no hay galería o está vacía, usar imagen principal como fallback
+if (allImages.length === 0 && product.image) {
+  allImages = [normalizeImagePath(product.image)];
+}
+
+const hasMultipleImages = allImages.length > 1;
 ---
 
 <BaseLayout title={product.name}>
   <div class="grid gap-6 md:grid-cols-2">
     <div class="rounded-2xl border bg-white overflow-hidden">
-      <div class="aspect-square bg-slate-100">
-        <img src={finalSrc} alt={product.name} class="h-full w-full object-cover" />
+      <div class="aspect-square bg-slate-100 relative">
+        {allImages.length > 0 ? (
+          hasMultipleImages ? (
+            <div class="carousel-container relative w-full h-full">
+              {allImages.map((img, index) => (
+                <img
+                  src={img}
+                  alt={`${product.name} - imagen ${index + 1}`}
+                  class={`carousel-image absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${index === 0 ? 'opacity-100' : 'opacity-0'}`}
+                  data-index={index}
+                />
+              ))}
+              
+              {/* Controles del carrusel */}
+              <button
+                class="carousel-btn carousel-prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition z-10"
+                aria-label="Imagen anterior"
+              >
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              
+              <button
+                class="carousel-btn carousel-next absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition z-10"
+                aria-label="Imagen siguiente"
+              >
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              {/* Indicadores */}
+              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {allImages.map((_, index) => (
+                  <button
+                    class={`carousel-dot w-2 h-2 rounded-full transition ${index === 0 ? 'bg-white' : 'bg-white/50'}`}
+                    data-index={index}
+                    aria-label={`Ir a imagen ${index + 1}`}
+                  />
+                ))}
+              </div>
+
+              {/* Contador de imágenes */}
+              <div class="absolute top-4 right-4 bg-black/60 text-white text-xs px-2 py-1 rounded-full z-10">
+                <span class="current-image">1</span>/{allImages.length}
+              </div>
+            </div>
+          ) : (
+            <img src={allImages[0]} alt={product.name} class="h-full w-full object-cover" />
+          )
+        ) : (
+          <div class="flex items-center justify-center h-full text-slate-400">
+            Sin imagen
+          </div>
+        )}
       </div>
     </div>
 
@@ -47,7 +125,7 @@ const finalSrc = imageSrc && !imageSrc.startsWith("/") ? `/${imageSrc}` : imageS
       </p>
 
       <div class="mt-6 flex flex-col gap-3 sm:flex-row">
-        <a
+        
           href={`https://wa.me/5493513881970?text=${encodeURIComponent(waMessage)}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -63,3 +141,56 @@ const finalSrc = imageSrc && !imageSrc.startsWith("/") ? `/${imageSrc}` : imageS
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  const images = document.querySelectorAll('.carousel-image');
+  const dots = document.querySelectorAll('.carousel-dot');
+  const prevBtn = document.querySelector('.carousel-prev');
+  const nextBtn = document.querySelector('.carousel-next');
+  const currentImageSpan = document.querySelector('.current-image');
+
+  if (images.length > 1) {
+    let currentIndex = 0;
+
+    function showImage(index: number) {
+      images.forEach((img, i) => {
+        img.classList.toggle('opacity-100', i === index);
+        img.classList.toggle('opacity-0', i !== index);
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-white', i === index);
+        dot.classList.toggle('bg-white/50', i !== index);
+      });
+
+      if (currentImageSpan) {
+        currentImageSpan.textContent = String(index + 1);
+      }
+
+      currentIndex = index;
+    }
+
+    function nextImage() {
+      const next = (currentIndex + 1) % images.length;
+      showImage(next);
+    }
+
+    function prevImage() {
+      const prev = (currentIndex - 1 + images.length) % images.length;
+      showImage(prev);
+    }
+
+    prevBtn?.addEventListener('click', prevImage);
+    nextBtn?.addEventListener('click', nextImage);
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => showImage(index));
+    });
+
+    // Navegación con teclado
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'ArrowRight') nextImage();
+    });
+  }
+</script>
