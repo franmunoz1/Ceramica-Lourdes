@@ -7,5 +7,5 @@ description: |
   Altura:
   Diámetro:
 order: 0
-active: true
+active: false
 ---
