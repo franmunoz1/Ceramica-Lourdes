@@ -8,5 +8,5 @@ images:
   - /uploads/platito-redondo-2.png
 description: "Medidas:"
 order: ""
-active: false
+active: true
 ---
