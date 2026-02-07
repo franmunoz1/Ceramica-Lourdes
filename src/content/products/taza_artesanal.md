@@ -1,9 +1,12 @@
 ---
-name: Plato redondo
-slug: Plato redondo
+name: Platito redondo
+slug: Platito redondo
 price: 14000
-image: /uploads/whatsapp-image-2026-01-26-at-19.26.26.png
-description: .
+image: /uploads/platito-redondo-1.png
+images:
+  - /uploads/platito-redondo-1.png
+  - /uploads/platito-redondo-2.png
+description: "Medidas:"
 order: ""
 active: false
 ---
