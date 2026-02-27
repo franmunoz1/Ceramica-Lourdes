@@ -6,5 +6,5 @@ image: /uploads/img_2411.jpeg
 images: []
 description: Bandeja de Argentina ideal para picadas
 order: 1
-active: true
+active: false
 ---
