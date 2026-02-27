@@ -1,9 +1,9 @@
 ---
-name: Maceta cuadrada
-slug: Maceta cuadrada
-price: 15000
+name: Macetitas cuadradas
+slug: Macetitas cuadradas
+price: 14998
 image: /uploads/img_0103.jpg
-description: .
+description: MEDIDAS
 order: 0
-active: false
+active: true
 ---
