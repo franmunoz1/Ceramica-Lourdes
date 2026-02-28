@@ -2,10 +2,13 @@
 name: Servilletero
 slug: Servilletero
 price: 17000
-image: /uploads/whatsapp-image-2026-01-26-at-19.26.26.png
-description: |-
-  PROMO!!!
-  Llevando los dos $30000
+image: /uploads/img_2913-1-.jpeg
+images:
+  - /uploads/img_2913-1-.jpeg
+  - /uploads/img_2937-1-.jpeg
+  - /uploads/img_2938-1-.jpeg
+description: |
+  MEDIDAS
 order: ""
 active: false
 ---
