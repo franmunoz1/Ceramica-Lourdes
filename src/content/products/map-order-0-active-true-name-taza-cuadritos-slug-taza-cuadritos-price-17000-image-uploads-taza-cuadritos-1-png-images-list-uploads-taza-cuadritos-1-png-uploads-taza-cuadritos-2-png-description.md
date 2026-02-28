@@ -1,11 +1,11 @@
 ---
-name: "Taza cuadriculada "
-slug: Taza cuadriculada
+name: Taza cuadros
+slug: Taza cuadros
 price: 17000
-image: /uploads/taza-cuadritos-1.png
+image: /uploads/taza-cuadros-1.png
 images:
-  - /uploads/taza-cuadritos-1.png
-  - /uploads/taza-cuadritos-2.png
+  - /uploads/taza-cuadros-1.png
+  - /uploads/taza-cuadros-2.png
 description: |-
   MEDIDAS
   -Alto:
