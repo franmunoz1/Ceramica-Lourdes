@@ -2,11 +2,11 @@
 name: Platito redondo
 slug: Platito redondo
 price: 14000
-image: /uploads/platito-redondo-1.png
+image: /uploads/platito-1.png
 images:
-  - /uploads/platito-redondo-1.png
-  - /uploads/platito-redondo-2.png
-description: "Medidas:"
+  - /uploads/platito-1.png
+  - /uploads/platito-2.png
+description: MEDIDAS
 order: ""
 active: true
 ---
