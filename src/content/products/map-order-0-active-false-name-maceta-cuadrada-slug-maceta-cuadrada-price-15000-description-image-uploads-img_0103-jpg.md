@@ -1,8 +1,11 @@
 ---
-name: Macetitas cuadradas
-slug: Macetitas cuadradas
-price: 14998
-image: /uploads/img_0103.jpg
+name: Macetita cuadrada celeste
+slug: Macetita cuadrada celeste
+price: 15000
+image: /uploads/cadrada-1.png
+images:
+  - /uploads/cadrada-1.png
+  - /uploads/cuadrada-2.png
 description: MEDIDAS
 order: 0
 active: true
