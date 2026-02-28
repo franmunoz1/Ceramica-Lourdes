@@ -1,5 +1,5 @@
 ---
-name: Taza + Plato Cuadritos
+name: Taza + Plato Rayas
 slug: Taza + Plato Cuadritos
 price: 29000
 image: /uploads/taza-y-plato-1.png
