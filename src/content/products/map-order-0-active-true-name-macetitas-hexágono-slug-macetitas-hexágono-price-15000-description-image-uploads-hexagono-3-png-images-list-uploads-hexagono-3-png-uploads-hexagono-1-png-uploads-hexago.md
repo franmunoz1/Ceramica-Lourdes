@@ -8,7 +8,9 @@ images:
   - /uploads/hexagono-1.png
   - /uploads/hexagono-2.png
   - /uploads/hexagono-4.png
-description: .
+description: |-
+  MEDIDAS
+  Alto: 6,5 cm
 order: 0
 active: true
 ---
