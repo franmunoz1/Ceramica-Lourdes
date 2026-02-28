@@ -9,6 +9,9 @@ images:
   - /uploads/img_2938-1-.jpeg
 description: |
   MEDIDAS
+  Alto: 8,5 cm 
+  Largo: 15 cm 
+  Ancho: 5 cm 
 order: ""
 active: false
 ---
