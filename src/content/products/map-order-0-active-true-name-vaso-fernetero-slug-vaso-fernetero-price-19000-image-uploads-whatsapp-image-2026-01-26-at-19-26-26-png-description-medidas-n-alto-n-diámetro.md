@@ -2,7 +2,10 @@
 name: Vaso fernetero
 slug: Vaso fernetero
 price: 19000
-image: /uploads/whatsapp-image-2026-01-26-at-19.26.26.png
+image: /uploads/fernetero-1.jpeg
+images:
+  - /uploads/fernetero-1.jpeg
+  - /uploads/fernetero-3.png
 description: |-
   MEDIDAS
   -Alto:
