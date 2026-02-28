@@ -8,8 +8,8 @@ images:
   - /uploads/dijes-2.png
   - /uploads/dijes-3.png
 description: |-
-  Cordón a elección.
-  Colores disponibles: Negro, azul, bordó, fucsia
+  Cordón a elección!
+  Colores disponibles: Negro, azul, bordó, fucsia y marrón
 order: 0
-active: false
+active: true
 ---
