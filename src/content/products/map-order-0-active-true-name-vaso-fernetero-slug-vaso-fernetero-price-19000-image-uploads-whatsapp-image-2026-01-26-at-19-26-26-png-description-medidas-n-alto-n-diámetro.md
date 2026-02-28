@@ -8,8 +8,8 @@ images:
   - /uploads/fernetero-3.png
 description: |-
   MEDIDAS
-  -Alto:
-  -Diámetro:
+  -Alto: 18 cm
+  -Diámetro: 8,5 cm
 order: 0
 active: true
 ---
