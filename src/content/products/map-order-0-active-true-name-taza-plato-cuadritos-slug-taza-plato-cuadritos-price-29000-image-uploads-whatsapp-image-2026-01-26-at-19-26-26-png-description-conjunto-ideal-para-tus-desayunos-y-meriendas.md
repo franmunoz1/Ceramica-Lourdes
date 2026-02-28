@@ -1,8 +1,12 @@
 ---
-name: Taza + Plato cuadritos
-slug: Taza + Plato cuadritos
+name: Taza + Plato Cuadritos
+slug: Taza + Plato Cuadritos
 price: 29000
-image: /uploads/whatsapp-image-2026-01-26-at-19.26.26.png
+image: /uploads/taza-y-plato-1.png
+images:
+  - /uploads/taza-y-plato-1.png
+  - /uploads/taza-y-plato-2.png
+  - /uploads/taza-y-plato-3.png
 description: Conjunto ideal para tus desayunos y meriendas!
 order: 0
 active: true
