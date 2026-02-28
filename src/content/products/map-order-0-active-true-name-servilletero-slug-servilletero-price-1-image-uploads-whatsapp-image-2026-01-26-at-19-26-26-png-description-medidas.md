@@ -7,5 +7,5 @@ description: |-
   PROMO!!!
   Llevando los dos $30000
 order: ""
-active: true
+active: false
 ---
