@@ -12,5 +12,5 @@ description: |-
   MEDIDAS
   Alto: 6,5 cm
 order: 0
-active: true
+active: false
 ---
