@@ -11,5 +11,5 @@ description: |-
   Alto: 6 cm 
   Ancho: 9,5 cm x 9,5 cm
 order: 0
-active: true
+active: false
 ---
