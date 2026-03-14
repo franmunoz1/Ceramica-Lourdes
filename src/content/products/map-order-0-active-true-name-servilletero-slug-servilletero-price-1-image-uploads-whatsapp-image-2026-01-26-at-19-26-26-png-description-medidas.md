@@ -6,7 +6,7 @@ image: /uploads/servilletero-1.png
 images:
   - /uploads/servilletero-1.png
   - /uploads/servilletero-2.png
-  - /uploads/servilletero-3.png
+  - /uploads/img_2937-1-.jpeg
   - /uploads/img_2913-1-.jpeg
 description: |
   MEDIDAS
