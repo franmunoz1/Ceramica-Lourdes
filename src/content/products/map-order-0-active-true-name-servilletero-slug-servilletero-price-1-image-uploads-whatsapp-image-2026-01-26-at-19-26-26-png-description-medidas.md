@@ -2,11 +2,12 @@
 name: Servilletero
 slug: Servilletero
 price: 17000
-image: /uploads/img_2913-1-.jpeg
+image: /uploads/servilletero-1.png
 images:
-  - /uploads/img_2913-1-.jpeg
+  - /uploads/servilletero-1.png
   - /uploads/img_2937-1-.jpeg
-  - /uploads/img_2938-1-.jpeg
+  - /uploads/servilletero-2.png
+  - /uploads/img_2913-1-.jpeg
 description: |
   MEDIDAS
   Alto: 8,5 cm 
