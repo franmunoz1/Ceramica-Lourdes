@@ -1,9 +1,13 @@
 ---
 name: Aceitunero
 slug: Aceitunero
-price: 1
-image: /uploads/whatsapp-image-2026-01-26-at-19.26.26.png
-description: Id
+price: 28000
+image: /uploads/aceitunero-2.png
+images:
+  - /uploads/aceitunero-2.png
+  - /uploads/aceitunero-1.png
+  - /uploads/aceitunero-3.png
+description: .
 order: 0
-active: false
+active: true
 ---
